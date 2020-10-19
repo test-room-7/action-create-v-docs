@@ -23,7 +23,7 @@ runs:
         # FIXME Remove this once v doc will create the output directory by itself
         mkdir -p $DOCS_DIR
 
-        v doc -f html -inline-assets -no-timestamp -readme -o $DOCS_DIR $MODULE_DIR
+        v doc -f html -inline-assets -no-timestamp -o $DOCS_DIR $MODULE_DIR
 
         # FIXME Remove once v doc will allow to specify a file name for output file
         rm -f $DOCS_DIR/index.html
