@@ -1,0 +1,31 @@
+name: Generate documentation for V module
+description: A GitHub action to create documentation for V module
+author: alexesprit
+inputs:
+  docs-dir:
+    description: Directory where documentation will be placed
+    required: true
+  module-dir:
+    description: Directory where module source files are placed
+    required: false
+    default: .
+branding:
+  icon: book-open
+  color: gray-dark
+runs:
+  using: composite
+  steps:
+    - name: Generate documentation
+      run: |
+        DOCS_DIR=${{ inputs.docs-dir }}
+        MODULE_DIR=${{ inputs.module-dir }}
+
+        # FIXME Remove this once v doc will create the output directory by itself
+        mkdir -p $DOCS_DIR
+
+        v doc -f html -inline-assets -no-timestamp -readme -o $DOCS_DIR $MODULE_DIR
+
+        # FIXME Remove once v doc will allow to specify a file name for output file
+        rm -f $DOCS_DIR/index.html
+        mv $DOCS_DIR/*.html $DOCS_DIR/index.html
+      shell: bash
