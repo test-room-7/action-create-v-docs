@@ -1,0 +1,13 @@
+name: Update version reference
+on:
+  release:
+    types: [published, edited]
+jobs:
+  update-ref:
+    name: Update reference
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update major version reference
+        uses: Actions-R-Us/actions-tagger@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
