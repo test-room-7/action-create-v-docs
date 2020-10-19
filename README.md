@@ -33,7 +33,7 @@ jobs:
           v-version: master
 
       - name: Generate documentation
-        uses: test-room-7@action-create-v-docs@v0
+        uses: test-room-7/action-create-v-docs@v0
         with:
           docs-dir: docs
 
