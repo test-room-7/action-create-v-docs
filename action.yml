@@ -1,5 +1,5 @@
-name: Generate documentation for V module
-description: A GitHub action to create documentation for V module
+name: Create documentation for V modules
+description: A GitHub action to create documentation for V modules
 author: alexesprit
 inputs:
   docs-dir:
