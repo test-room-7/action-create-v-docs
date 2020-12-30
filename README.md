@@ -47,6 +47,8 @@ jobs:
 
 Once this workflow is executed, the `docs` directory with documentation will be added (or updated if necessary) to your repository. Optionally, you can set up GitHub Pages for your repository to have documentation available at yourname.github.io/yourmodule.
 
+It's worth noting that the action output depends on the V `doc` tool, so consider using a stable V version in your workflow (see the `v-version` input of `nocturlab/setup-vlang-action` action) to make sure generated documentation is consistent and has no issues (or they are known or minor).
+
 ### Inputs
 
 #### Required inputs
